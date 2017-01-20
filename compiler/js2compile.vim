@@ -1,0 +1,12 @@
+if exists('current_compiler')
+  finish
+endif
+let current_compiler = 'js2compile'
+let &l:makeprg=join(['emacs','%','--quick','--batch',
+      \ "--eval=\"(progn(package-initialize)"
+      \ ."(require 'js2-mode)"
+      \ ."(setq js2-include-node-externs t js2-include-rhino-externs t js2-include-browser-externs t js2-strict-missing-semi-warning nil)"
+      \ ."(js2-mode)(js2-reparse t)(js2-display-error-list)"
+      \ ."(princ(with-current-buffer \\\"*js-lint*\\\"(buffer-substring-no-properties(point-min)(point-max))))(terpri))\"" ,
+      \ '2>/dev/null','\|','sed','"s/.*$/% &/"'])
+let &l:errorformat='%f line %l: %m'
