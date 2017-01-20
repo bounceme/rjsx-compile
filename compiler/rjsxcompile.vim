@@ -14,4 +14,5 @@ exe 'CompilerSet makeprg=' . escape(join(['emacs','%','--quick','--batch',
       \ .'(rjsx-mode)(js2-reparse t)(js2-display-error-list)'
       \ .'(princ(with-current-buffer \\\"*js-lint*\\\"(buffer-substring-no-properties(point-min)(point-max))))(terpri))\"' ,
       \ '2>/dev/null','\\\|','sed','\"s/.*$/% &/\"']),' ')
+
 CompilerSet errorformat=%f\ line\ %l:\ %m
