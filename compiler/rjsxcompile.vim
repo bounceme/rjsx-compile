@@ -1,7 +1,7 @@
 if exists('current_compiler')
   finish
 endif
-let current_compiler = 'js2compile'
+let current_compiler = 'rjsxcompile'
 let &l:makeprg=join(['emacs','%','--quick','--batch',
       \ "--eval=\"(progn(package-initialize)"
       \ ."(require 'rjsx-mode)"
