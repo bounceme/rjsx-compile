@@ -2,7 +2,7 @@
 
 ### Requirements:
 
-emacs with [rjsx-mode](https://github.com/felipeochoa/rjsx-mode) installed from the package manager
+emacs with [rjsx-mode](https://github.com/felipeochoa/rjsx-mode) installed from melpa
 
 sed
 
