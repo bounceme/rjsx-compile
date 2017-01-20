@@ -8,6 +8,6 @@ sed
 
 ### Usage:
 
-edit a js/jsx file and run `:compiler rjsxcompile` then `:make`
+edit a js/jsx file and run `:compiler rjsxcompile` then `:make`. Use `:copen` to view and navigate the errors
 
 also read `:h compiler`
