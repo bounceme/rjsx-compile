@@ -2,6 +2,6 @@
 
 requirements:
 
-emacs with js2-mode installed from the package manager
+emacs with rjsx-mode installed from the package manager
 
 sed
