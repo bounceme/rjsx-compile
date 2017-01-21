@@ -1,5 +1,7 @@
 # rjsx-compile
 
+A es6/jsx compatible "linter"
+
 ### Requirements:
 
 emacs >= 24 with [rjsx-mode](https://github.com/felipeochoa/rjsx-mode) installed from melpa
