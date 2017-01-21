@@ -1,6 +1,6 @@
 # rjsx-compile
 
-A es6+/jsx/rhino compatible "linter"
+A es6+ / jsx /rhino / e4x compatible "linter"
 
 ### Requirements:
 
