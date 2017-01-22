@@ -42,7 +42,7 @@ endfunction
 
 augroup rjsx
   au!
-  au QuickfixCmdPost make let s:event = 1
-  au QuickfixCmdPost lmake let s:event = 2
-  au QuickfixCmdPost <buffer> exe 'call ' . (get(s:,'event') < 2 ? 's:QfMakePath()' : 's:LocMakePath()')
+  au QuickfixCmdPost make let s:event = 'Qf'
+  au QuickfixCmdPost lmake let s:event = 'Loc'
+  au QuickfixCmdPost <buffer> if type(get(s:,'event')) | exe 'call s:' . s:event . 'MakePath()' | unlet s:event | endif
 augroup END
