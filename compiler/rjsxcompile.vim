@@ -16,7 +16,7 @@ exe 'CompilerSet makeprg=' . escape(join(['emacs','%','--quick','--batch',
 
 CompilerSet errorformat=line\ %l:\ %m
 
-function s:QfMakePath()
+function! s:QfMakePath()
    let qflist = getqflist()[1:]
    for i in qflist
       let i.filename = expand('%:p')
@@ -24,7 +24,7 @@ function s:QfMakePath()
    call setqflist(qflist)
 endfunction
 
-function s:LocMakePath()
+function! s:LocMakePath()
    let loclist = getloclist(1)[1:]
    for i in loclist
       let i.filename = expand('%:p')
