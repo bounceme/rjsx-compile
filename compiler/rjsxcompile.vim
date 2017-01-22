@@ -12,13 +12,12 @@ exe 'CompilerSet makeprg=' . escape(join(['emacs','%','--quick','--batch',
       \ ."(require 'rjsx-mode)"
       \ .'(setq js2-include-node-externs t js2-include-rhino-externs t js2-include-browser-externs t js2-strict-missing-semi-warning nil)'
       \ .'(rjsx-mode)(js2-reparse t)(js2-display-error-list)'
-      \ .'(princ(with-current-buffer \\\"*js-lint*\\\"(buffer-substring-no-properties(point-min)(point-max))))(terpri))\"' ,
-      \ '2>/dev/null']),' ')
+      \ .'(princ(with-current-buffer \\\"*js-lint*\\\"(buffer-substring-no-properties(point-min)(point-max))))(terpri))\"']),' ')
 
 CompilerSet errorformat=line\ %l:\ %m
 
 function s:QfMakePath()
-   let qflist = getqflist()
+   let qflist = getqflist()[1:]
    for i in qflist
       let i.filename = expand('%:p')
    endfor
@@ -26,7 +25,7 @@ function s:QfMakePath()
 endfunction
 
 function s:LocMakePath()
-   let loclist = getloclist(1)
+   let loclist = getloclist(1)[1:]
    for i in loclist
       let i.filename = expand('%:p')
    endfor
