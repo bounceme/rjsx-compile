@@ -17,11 +17,11 @@ exe 'CompilerSet makeprg=' . escape(join(['emacs','%','--quick','--batch',
 CompilerSet errorformat=line\ %l:\ %m
 
 function! s:QfMakePath()
-  call setqflist(map(filter(getqflist(),'v:val.lnum'),'extend(v:val,{"filename": expand("%:p")},"force")'))
+  call setqflist(map(filter(getqflist(),'v:val.lnum'),'extend(v:val,{"filename": expand("%:p")})'))
 endfunction
 
 function! s:LocMakePath()
-  call setloclist(1,map(filter(getloclist(1),'v:val.lnum'),'extend(v:val,{"filename": expand("%:p")},"force")'))
+  call setloclist(1,map(filter(getloclist(1),'v:val.lnum'),'extend(v:val,{"filename": expand("%:p")})'))
 endfunction
 
 augroup rjsx
