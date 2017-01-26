@@ -17,27 +17,11 @@ exe 'CompilerSet makeprg=' . escape(join(['emacs','%','--quick','--batch',
 CompilerSet errorformat=line\ %l:\ %m
 
 function! s:QfMakePath()
-  let qflist = getqflist()
-  for i in qflist
-    if !get(i,'lnum')
-      call remove(qflist,index(qflist,i))
-    else
-      let i.filename = expand('%:p')
-    endif
-  endfor
-  call setqflist(qflist)
+  call setqflist(map(filter(getqflist(),'v:val.lnum'),'extend(v:val,{"filename": expand("%:p")},"force")'))
 endfunction
 
 function! s:LocMakePath()
-  let loclist = getloclist(1)
-  for i in loclist
-    if !get(i,'lnum')
-      call remove(loclist,index(loclist,i))
-    else
-      let i.filename = expand('%:p')
-    endif
-  endfor
-  call setloclist(1,loclist)
+  call setloclist(1,map(filter(getloclist(1),'v:val.lnum'),'extend(v:val,{"filename": expand("%:p")},"force")'))
 endfunction
 
 augroup rjsx
