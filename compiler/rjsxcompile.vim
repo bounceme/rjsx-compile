@@ -15,4 +15,4 @@ exe 'CompilerSet makeprg=' . escape(join(['emacs','%','--quick','--batch','--eva
       \ .'(with-current-buffer \\\"*js-lint*\\\" (buffer-substring-no-properties(point-min)(point-max)))))(terpri))\"'
       \ ]),' ')
 
-CompilerSet errorformat=%f\ line\ %l:\ %m
+CompilerSet errorformat=%f\ line\ %l:\ %m,%-G%.%#
