@@ -8,8 +8,8 @@ if exists(":CompilerSet") != 2
 endif
 
 exe 'CompilerSet makeprg=' . escape(join(['emacs','%','--quick','--batch','--eval='
-      \ .'\"(progn(package-initialize)(require ''rjsx-mode)'
-      \ .'(setq js2-include-node-externs t js2-include-rhino-externs t js2-include-browser-externs t js2-strict-missing-semi-warning nil)'
+      \ .'\"(progn(setq package-load-list ''((js2-mode t)(rjsx-mode t)))(package-initialize)(require ''rjsx-mode)'
+      \ .'(setq js2-include-node-externs t js2-include-browser-externs t js2-strict-missing-semi-warning nil)'
       \ .'(rjsx-mode)(js2-reparse)(js2-display-error-list)'
       \ .'(princ(replace-regexp-in-string \\\"^\\\" (concat buffer-file-name \\\" \\\")'
       \ .'(with-current-buffer \\\"*js-lint*\\\" (buffer-substring-no-properties(point-min)(point-max)))))(terpri))\"'
