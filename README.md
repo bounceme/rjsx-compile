@@ -1,6 +1,6 @@
 # rjsx-compile
 
-A es6+ / jsx / rhino compatible "linter"
+A es6+ / jsx compatible "linter"
 
 Reports error messages from https://github.com/mozilla/rhino/blob/0ce17ecd3cb466d25f8d68b8f061ad23c77e8712/src/org/mozilla/javascript/resources/Messages.properties 
 as well as ones specific to jsx.
